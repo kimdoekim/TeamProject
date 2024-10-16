@@ -15,11 +15,13 @@ public class insertComment extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
 		String userId = (String) req.getSession().getAttribute("userId");
 
 		if(userId ==null || userId.isEmpty()) {
 			userId = "U001";
 		}
+
 		/*
 	    if (userId != null) {
 	        // user_id가 있는 경우, 필요한 로직 수행
@@ -29,6 +31,7 @@ public class insertComment extends HttpServlet{
 	        //resp.sendRedirect("로그인"); // 로그인 페이지로 리다이렉트
 	    }
 	    */
+		
 		String productId = req.getParameter("product_id");
         String commentText = req.getParameter("comment_text");
         int rating = Integer.parseInt(req.getParameter("rating"));
