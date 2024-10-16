@@ -25,7 +25,7 @@ public class HomeServlet extends HttpServlet {
         // 세션에서 사용자 정보 가져오기
         HttpSession session = req.getSession();
         String userId = (String) session.getAttribute("userId");
-
+        System.out.println(userId);
         // 오늘의 책, 베스트셀러 정보
         String
         todayBook = homeService.getTodayBook();
@@ -59,7 +59,7 @@ public class HomeServlet extends HttpServlet {
         req.setAttribute("cartItems", cartItems);
  
         
-
+        
  
 
         // JSP로 이동
